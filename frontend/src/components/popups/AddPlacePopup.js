@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import PopupWithForm from "./PopupWithForm"
 
 function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
 
     const [nameImage, setNameImage] = useState('')
     const [linkImage, setLinkImage] = useState('')
-    
-    useEffect(()=>{
+
+    useEffect(() => {
         setNameImage('')
         setLinkImage('')
     }, [isOpen])
@@ -21,7 +21,7 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        onAddPlace({nameImage,linkImage})
+        onAddPlace({ nameImage, linkImage })
     }
 
     return (

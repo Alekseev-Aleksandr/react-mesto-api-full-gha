@@ -1,22 +1,22 @@
-import { useContext, useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import PopupWithForm from "./PopupWithForm"
 import { UserInfoContext } from "../../context/CurrentUserContext"
 
-function EditProfilePopup({isOpen, onUpdateUser}) {
+function EditProfilePopup({ isOpen, onUpdateUser }) {
     const currentUser = useContext(UserInfoContext)
 
     const [name, setName] = useState(' ')
     const [description, setDescription] = useState(' ')
-    
-    function handleChangeName(e){
+
+    function handleChangeName(e) {
         setName(e.target.value)
     }
 
-    function handleChangeDescription(e){
+    function handleChangeDescription(e) {
         setDescription(e.target.value)
     }
 
-    function handleSubmit(e){
+    function handleSubmit(e) {
         e.preventDefault();
         onUpdateUser({
             name: name,
@@ -24,10 +24,10 @@ function EditProfilePopup({isOpen, onUpdateUser}) {
         })
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         setName(currentUser.name)
         setDescription(currentUser.about)
-    },[currentUser, isOpen])
+    }, [currentUser, isOpen])
 
     return (
         <PopupWithForm title='Редактировать профиль'
@@ -55,8 +55,8 @@ function EditProfilePopup({isOpen, onUpdateUser}) {
                     minLength="2"
                     maxLength="200"
                     placeholder='Обо мне'
-                    value={description || ''} 
-                    onChange={handleChangeDescription}/>
+                    value={description || ''}
+                    onChange={handleChangeDescription} />
 
                 <span className="form__inputs-error form__input-profession-error"></span>
             </div>

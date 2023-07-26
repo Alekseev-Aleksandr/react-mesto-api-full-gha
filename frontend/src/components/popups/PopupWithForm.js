@@ -1,11 +1,11 @@
-import { useContext } from "react"
+import React, { useContext } from "react"
 import usePopupClose from "../../hooks/usePopupClose"
 import { AppContext } from "../../context/AppContext"
 
 function PopupWithForm({ title, isOpen, onSubmit, children }) {
 
-    const {isLoading, closeAllPopups: onClose} = useContext(AppContext)
-    
+    const { isLoading, closeAllPopups: onClose } = useContext(AppContext)
+
     usePopupClose(isOpen, onClose)
 
     return (
@@ -23,7 +23,7 @@ function PopupWithForm({ title, isOpen, onSubmit, children }) {
                     <button className="form__button form__button_type_save form__button_active"
                         type="submit" >
 
-                        {isLoading? 'Cохранение...': 'Сохранить'}
+                        {isLoading ? 'Cохранение...' : 'Сохранить'}
                     </button>
                 </form>
 
