@@ -1,0 +1,14 @@
+.form__button_type_save {
+    margin: 48px auto 37px auto;
+}
+
+@media screen and (max-width:767px) {
+    .form__button_type_save {
+        height: 46px;
+        max-width: 238px;
+        width: 100%;
+        margin-bottom: 25px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

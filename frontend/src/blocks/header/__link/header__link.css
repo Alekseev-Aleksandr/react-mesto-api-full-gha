@@ -1,0 +1,11 @@
+.header__link {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    margin: 6px 0 0 24px;
+}
+
+.header__link:hover {
+    opacity: .6;
+    transition: .4s;
+}

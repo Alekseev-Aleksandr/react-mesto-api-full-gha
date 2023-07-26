@@ -1,0 +1,14 @@
+.card {
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    max-width: 282px;
+    min-height: 361px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-areas:
+        "image image"
+        "capture button";
+    grid-template-rows: 282px auto;
+    grid-template-columns: auto 47px;
+}

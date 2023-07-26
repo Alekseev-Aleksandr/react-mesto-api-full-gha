@@ -1,0 +1,12 @@
+.card__capture {
+    grid-area: capture;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    max-width: 189px;
+    align-self: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left: 21px;
+}

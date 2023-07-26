@@ -1,0 +1,5 @@
+.profile__first-name {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
