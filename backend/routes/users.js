@@ -8,7 +8,7 @@ const {
   updateProfile,
   updateAvatar,
   getMyInfo,
-
+  logOut,
 } = require('../controllers/users');
 
 router.get('/users', getAllUser);
@@ -46,5 +46,7 @@ router.patch(
   }),
   updateAvatar,
 );
+
+router.get('/logout', logOut);
 
 module.exports = router;

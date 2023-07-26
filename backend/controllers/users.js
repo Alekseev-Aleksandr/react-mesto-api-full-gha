@@ -53,7 +53,7 @@ const updateProfile = ((req, res, next) => {
     .orFail(() => {
       next(new NotFoundError('User not found with id'));
     })
-    .then((user) => res.status(200).send({ data: user }))
+    .then((user) => res.status(200).send({ userInfo: user }))
     .catch(next);
 });
 
@@ -62,7 +62,7 @@ const updateAvatar = ((req, res, next) => {
     .orFail(() => {
       throw new NotFoundError('Not found user by id');
     })
-    .then((user) => res.status(200).send({ data: user }))
+    .then((user) => res.status(200).send({ userInfo: user }))
     .catch(next);
 }
 );
@@ -71,10 +71,26 @@ const login = (req, res, next) => {
   const { email, password } = req.body;
   User.findUserByCredentials(email, password, next)
     .then((user) => {
-      const newToken = jwt.sign({ _id: user.id }, 'unique-secret-key', { expiresIn: '7d' });
+      const newToken = jwt.sign(
+        { _id: user.id },
+        'unique-secret-key',
+        { expiresIn: '7d' },
+      );
+
+      res.cookie('jwt', newToken, {
+        maxAge: 3600000 * 24 * 7,
+        httpOnly: true,
+        sameSite: true,
+      });
+
       res.status(200).send(({ message: 'All right', token: newToken }));
     })
     .catch(next);
+};
+
+const logOut = (req, res) => {
+  res.status(202).clearCookie('jwt')
+    .send({ message: 'пока пока' });
 };
 
 const getMyInfo = (req, res, next) => {
@@ -95,5 +111,6 @@ module.exports = {
   updateProfile,
   updateAvatar,
   login,
+  logOut,
   getMyInfo,
 };

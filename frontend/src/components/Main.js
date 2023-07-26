@@ -4,7 +4,6 @@ import { UserInfoContext } from "../context/CurrentUserContext"
 
 function Main(props) {
     const userInfo = useContext(UserInfoContext)
-
     return (
         <main className="main">
 

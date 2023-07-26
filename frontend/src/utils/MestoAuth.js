@@ -1,4 +1,4 @@
-const BASE_URL = 'https://auth.nomoreparties.co/'
+const BASE_URL = 'http://localhost:4000/'
 
 export const requestAuth = ({ email, password }, endPoint) => {
 
@@ -7,6 +7,7 @@ export const requestAuth = ({ email, password }, endPoint) => {
         headers: {
             "Content-Type": "application/json"
         },
+        credentials: 'include',
         body: JSON.stringify({
             "email": email,
             "password": password
@@ -16,13 +17,13 @@ export const requestAuth = ({ email, password }, endPoint) => {
     })
 }
 
-export function requestCheckJWT(jwt) {
+export function requestCheckJWT() {
     return fetch(`${BASE_URL}users/me`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${jwt}`
-        }
+        },
+        credentials: 'include',
     }).then((res) => {
         if (res.ok) return res.json()
     })

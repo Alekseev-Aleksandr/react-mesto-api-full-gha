@@ -16,6 +16,7 @@ import Login from './registration/Login.js';
 import InfoTooltip from './registration/InfoTooltip.js'
 import { requestAuth, requestCheckJWT } from "../utils/MestoAuth.js";
 
+
 function App() {
 
     const [currentUser, setCurrentUser] = useState({})
@@ -83,14 +84,14 @@ function App() {
 
     function handleCardDelete(cardId) {
         api.deleteCard(cardId)
-            .then(() => setCards((state) => state.filter((card) => card._id != cardId)))
+            .then(() => setCards((state) => state.filter((card) => card._id !== cardId)))
             .catch(console.error)
     }
 
     function handleUpdateUser(dataUs) {
         setIsLoading(true)
         api.editProfileInfo(dataUs)
-            .then(setCurrentUser)
+            .then((response) => setCurrentUser(response.userInfo))
             .then(closeAllPopups)
             .catch(console.error)
             .finally(() => setIsLoading(false))
@@ -99,7 +100,7 @@ function App() {
     function handleUpdateAvatar(newAvatar) {
         setIsLoading(true)
         api.editAvatar(newAvatar)
-            .then(setCurrentUser)
+            .then((response) => { setCurrentUser(response.userInfo); return response })
             .then(closeAllPopups)
             .catch(console.error)
             .finally(() => setIsLoading(false))
@@ -130,7 +131,6 @@ function App() {
                 }
             })
             .catch((err) => {
-
                 console.log(err);
                 setStatusImage(false)
                 setIsStatusAuthPopupOpen(true)
@@ -138,39 +138,37 @@ function App() {
     }
 
     function onLogOut() {
-        localStorage.removeItem('jwt')
-        setLoggedIn(false)
-        navigate('/sign-in', { replace: true })
+        api.logOut().then((response) => {
+            setLoggedIn(false)
+            navigate('/sign-in', { replace: true })
+        })
+
     }
 
     function checkToken() {
-        if (localStorage.getItem('jwt')) {
-            const jwt = localStorage.getItem('jwt')
-
-            requestCheckJWT(jwt)
-                .then((res) => {
-                    setLoggedIn(true)
-                    navigate('/')
-                    setEmailUser(res.data.email)
-                })
-                .catch(console.error)
-        }
-
+        requestCheckJWT()
+            .then((res) => {
+                setLoggedIn(true)
+                navigate('/')
+                setEmailUser(res.myInfo.email)
+            })
+            .catch((err) => {
+                setLoggedIn(false)
+                console.log(err)
+            })
     }
 
     function onLogin(formValue) {
         requestAuth(formValue, 'signin')
             .then((jwt) => {
                 if (jwt.token) {
-                    localStorage.setItem('jwt', jwt.token)
                     setLoggedIn(true)
                     navigate('/', { replace: true })
                     checkToken()
-
-
                 }
             })
             .catch((err) => {
+                setLoggedIn(false)
                 console.log(err);
                 setStatusImage(false)
                 setIsStatusAuthPopupOpen(true)
@@ -187,7 +185,9 @@ function App() {
                 .then((cards) => setCards(cards))
                 .catch(console.error)
             api.getUserInfo()
-                .then((userInfo) => setCurrentUser(userInfo))
+                .then((userInfo) => {
+                    setCurrentUser(userInfo.myInfo)
+                })
                 .catch(console.error)
         }
     }, [loggedIn])
