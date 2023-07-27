@@ -1,4 +1,4 @@
-import React, { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../images/logo.svg';
 
 function Header({ loggedIn, onLogOut, email }) {
