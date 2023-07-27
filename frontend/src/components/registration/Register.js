@@ -1,23 +1,23 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import { Link } from "react-router-dom"
 
 
-function Register({onRegistration}) {
+function Register({ onRegistration }) {
     const [formValue, setFormValue] = useState({
-        email:'',
-        password:''
+        email: '',
+        password: ''
     })
 
     function onChange(e) {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
 
         setFormValue({
-            ...formValue, 
+            ...formValue,
             [name]: value
         })
     }
 
-    function onSubmit(e){
+    function onSubmit(e) {
         e.preventDefault()
         onRegistration(formValue)
     }
