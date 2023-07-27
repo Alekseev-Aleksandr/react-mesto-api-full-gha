@@ -7,9 +7,14 @@ const NotFoundError = require('./errors/NotFoundError');
 const { errorLogger, requestLogger } = require('./middlewares/logger');
 const cookieParser = require('cookie-parser');
 
+const {
+  PORT = 4000,
+  MONGO_URL = 'mongodb://localhost:27017',
+} = process.env;
+
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/mestodb');
+mongoose.connect(`${MONGO_URL}/mestodb`);
 
 app.use(express.json());
 app.use(cookieParser());
