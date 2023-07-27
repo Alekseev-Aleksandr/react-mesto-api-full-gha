@@ -28,7 +28,7 @@ app.use(cors(
   },
 ));
 
-app.use(router);
+app.use('/api', router);
 
 app.use(errorLogger);
 
