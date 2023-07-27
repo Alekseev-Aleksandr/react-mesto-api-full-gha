@@ -1,7 +1,7 @@
-import { Link, useLocation } from 'react-router-dom';
+import React, { Link, useLocation } from 'react-router-dom';
 import logo from '../images/logo.svg';
 
-function Header({ loggedIn, onLogOut, email}) {
+function Header({ loggedIn, onLogOut, email }) {
     const location = useLocation().pathname
 
     function getLink() {
