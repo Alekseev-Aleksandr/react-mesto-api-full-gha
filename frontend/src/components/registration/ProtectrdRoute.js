@@ -1,4 +1,4 @@
-import Navigate from "react-router-dom";
+import React, { Navigate } from "react-router-dom";
 
 export default function ProtectedRoute({ element: Component, ...props }) {
     return (
