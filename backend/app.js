@@ -8,7 +8,7 @@ const { errorLogger, requestLogger } = require('./middlewares/logger');
 const cookieParser = require('cookie-parser');
 
 const {
-  PORT = 3000,
+  PORT = 4000,
   MONGO_URL = 'mongodb://localhost:27017',
 } = process.env;
 
@@ -17,18 +17,19 @@ const app = express();
 mongoose.connect(`${MONGO_URL}/mestodb`);
 
 app.use(express.json());
-app.use(cookieParser());
-
-app.use(requestLogger);
 
 app.use(cors(
   {
-    origin: 'http://alekseev.nomoreparties.sb.nomoreparties.sbs/',
+    origin: 'http://localhost:3000',
     credentials: true,
   },
 ));
 
-app.use('/api', router);
+app.use(cookieParser());
+
+app.use(requestLogger);
+
+app.use(router);
 
 app.use(errorLogger);
 
@@ -51,4 +52,6 @@ app.use((err, req, res, next) => {
   next();
 });
 
-app.listen(PORT, () => { console.log(`listen ${PORT} port`); });
+app.listen(PORT, () => {
+  console.log(`listen ${PORT} port`);
+});

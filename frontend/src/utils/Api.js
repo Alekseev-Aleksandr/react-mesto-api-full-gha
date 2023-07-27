@@ -124,7 +124,7 @@ class Api {
     }
 }
 const {
-    REACT_API_URL = 'http://alekseev.nomoreparties.sb.nomoreparties.sbs/',
+    REACT_API_URL = 'http://localhost:4000',
 } = process.env
 
 export const api = new Api({
