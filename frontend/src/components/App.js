@@ -2,7 +2,7 @@ import Header from './Header.js';
 import Main from './Main.js';
 import Footer from './Footer.js';
 import ImagePopup from './popups/ImagePopup.js';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { api } from '../utils/Api.js';
 import { UserInfoContext } from '../context/CurrentUserContext.js';
 import EditProfilePopup from './popups/EditProfilePopup.js';
