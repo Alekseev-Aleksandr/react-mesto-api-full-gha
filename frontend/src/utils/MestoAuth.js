@@ -1,4 +1,4 @@
-const BASE_URL = 'http://api.alekseev.nomoreparties.sbs/'
+const BASE_URL = 'http://api.alekseev.nomoreparties.sbs/api/'
 
 export const requestAuth = ({ email, password }, endPoint) => {
 

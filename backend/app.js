@@ -23,7 +23,7 @@ app.use(requestLogger);
 
 app.use(cors(
   {
-    origin: 'http://localhost:3000',
+    origin: 'http://api.alekseev.nomoreparties.sbs',
     credentials: true,
   },
 ));
