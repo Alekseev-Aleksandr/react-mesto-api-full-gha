@@ -23,7 +23,7 @@ app.use(requestLogger);
 
 app.use(cors(
   {
-    origin: 'http://api.alekseev.nomoreparties.sbs/api',
+    origin: 'http://alekseev.nomoreparties.sb.nomoreparties.sbs/',
     credentials: true,
   },
 ));

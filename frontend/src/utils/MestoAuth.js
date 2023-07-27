@@ -1,8 +1,10 @@
-const BASE_URL = 'http://api.alekseev.nomoreparties.sbs/api/'
+const {
+    REACT_API_URL = 'http://alekseev.nomoreparties.sb.nomoreparties.sbs/',
+} = process.env
 
 export const requestAuth = ({ email, password }, endPoint) => {
 
-    return fetch(`${BASE_URL + endPoint}`, {
+    return fetch(`${REACT_API_URL + endPoint}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -18,7 +20,7 @@ export const requestAuth = ({ email, password }, endPoint) => {
 }
 
 export function requestCheckJWT() {
-    return fetch(`${BASE_URL}users/me`, {
+    return fetch(`${REACT_API_URL}users/me`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

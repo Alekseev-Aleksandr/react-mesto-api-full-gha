@@ -123,9 +123,12 @@ class Api {
         })
     }
 }
+const {
+    REACT_API_URL = 'http://alekseev.nomoreparties.sb.nomoreparties.sbs/',
+} = process.env
 
 export const api = new Api({
-    baseUrl: 'http://api.alekseev.nomoreparties.sbs/api/',
+    baseUrl: REACT_API_URL ,
     credentials: 'include',
     headers: {
         authorization: 'f2a9a4e2-fdf5-42ce-aab3-69e2f1a13e71',
