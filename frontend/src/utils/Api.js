@@ -114,7 +114,7 @@ class Api {
                 headers: this._headers,
             })
     }
-    
+
     logOut() {
         return this._request('/logout', {
             method: 'GET',
@@ -125,7 +125,7 @@ class Api {
 }
 
 export const api = new Api({
-    baseUrl: 'http://localhost:4000',
+    baseUrl: 'http://localhost:3000',
     credentials: 'include',
     headers: {
         authorization: 'f2a9a4e2-fdf5-42ce-aab3-69e2f1a13e71',
