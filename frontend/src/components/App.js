@@ -9,7 +9,7 @@ import EditProfilePopup from './popups/EditProfilePopup.js';
 import EditAvatarPopup from './popups/EditAvatarPopup.js';
 import AddPlacePopup from './popups/AddPlacePopup.js';
 import { AppContext } from '../context/AppContext.js';
-import  ProtectedRoute  from './registration/ProtectrdRoute.js';
+import ProtectedRoute from './registration/ProtectrdRoute.js';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import Register from './registration/Register.js';
 import Login from './registration/Login.js';
@@ -177,7 +177,7 @@ function App() {
 
     useEffect(() => {
         checkToken()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {
