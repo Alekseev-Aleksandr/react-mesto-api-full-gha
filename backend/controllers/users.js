@@ -69,6 +69,7 @@ const updateAvatar = ((req, res, next) => {
 
 const login = (req, res, next) => {
   const { email, password } = req.body;
+  console.log(email, password);
   User.findUserByCredentials(email, password, next)
     .then((user) => {
       const newToken = jwt.sign(
