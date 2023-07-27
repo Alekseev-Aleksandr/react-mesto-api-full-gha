@@ -8,7 +8,7 @@ const { errorLogger, requestLogger } = require('./middlewares/logger');
 const cookieParser = require('cookie-parser');
 
 const {
-  PORT = 4000,
+  PORT = 3000,
   MONGO_URL = 'mongodb://localhost:27017',
 } = process.env;
 
@@ -51,4 +51,4 @@ app.use((err, req, res, next) => {
   next();
 });
 
-app.listen(4000, () => { console.log('listen 4000 port'); });
+app.listen(PORT, () => { console.log('listen 4000 port'); });
