@@ -1,6 +1,4 @@
-const {
-    BASE_URL = 'http://localhost:3000'
-} = process.env;
+const BASE_URL = 'http://api.alekseev.nomoreparties.sbs/'
 
 export const requestAuth = ({ email, password }, endPoint) => {
 
