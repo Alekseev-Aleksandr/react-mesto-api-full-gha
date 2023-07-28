@@ -1,8 +1,8 @@
-const REACT_API_URL = 'http://api.alekseev.nomoreparties.sbs/' //localhost:4000
+const REACT_API_URL = 'http://api.alekseev.nomoreparties.sbs' //localhost:4000
 
 export const requestAuth = ({ email, password }, endPoint) => {
 
-    return fetch(`${REACT_API_URL + endPoint}`, {
+    return fetch(`${REACT_API_URL + '/' + endPoint}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -18,7 +18,7 @@ export const requestAuth = ({ email, password }, endPoint) => {
 }
 
 export function requestCheckJWT() {
-    return fetch(`${REACT_API_URL}users/me`, {
+    return fetch(`${REACT_API_URL}/users/me`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
