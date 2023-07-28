@@ -124,7 +124,7 @@ class Api {
     }
 }
 const {
-    REACT_API_URL = 'https://api.alekseev.nomoreparties.sbs',
+    REACT_API_URL = 'http://api.alekseev.nomoreparties.sbs',
 } = process.env
 
 export const api = new Api({
