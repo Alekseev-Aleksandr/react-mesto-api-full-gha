@@ -1,4 +1,4 @@
-const REACT_API_URL = 'api.alekseev.nomoreparties.sbs/'
+const REACT_API_URL = 'http://api.alekseev.nomoreparties.sbs/pm' //localhost:4000
 
 export const requestAuth = ({ email, password }, endPoint) => {
 
