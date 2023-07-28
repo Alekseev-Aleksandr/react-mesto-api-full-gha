@@ -140,7 +140,7 @@ function App() {
     function onLogOut() {
         api.logOut().then((response) => {
             setLoggedIn(false)
-            navigate('/sign-in', { replace: true })
+            navigate('sign-in', { replace: true })
         })
 
     }
@@ -159,7 +159,7 @@ function App() {
     }
 
     function onLogin(formValue) {
-        requestAuth(formValue, 'signin')
+        requestAuth(formValue, '/signin')
             .then((jwt) => {
                 if (jwt.token) {
                     setLoggedIn(true)
