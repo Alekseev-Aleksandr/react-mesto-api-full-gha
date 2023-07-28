@@ -20,7 +20,7 @@ app.use(express.json());
 
 app.use(cors(
   {
-    origin: 'http://alekseev.nomoreparties.sb.nomoreparties.sbs',
+    origin: 'http://alekseev.nomoreparties.sb.nomoreparties.sbs/',
     credentials: true,
   },
 ));
