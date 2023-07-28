@@ -159,7 +159,7 @@ function App() {
     }
 
     function onLogin(formValue) {
-        requestAuth(formValue, '/signin')
+        requestAuth(formValue, 'signin')
             .then((jwt) => {
                 if (jwt.token) {
                     setLoggedIn(true)
