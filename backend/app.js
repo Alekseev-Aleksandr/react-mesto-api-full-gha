@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
@@ -8,8 +9,9 @@ const { errorLogger, requestLogger } = require('./middlewares/logger');
 const cookieParser = require('cookie-parser');
 
 const {
-  PORT = 4000,
-  MONGO_URL = 'mongodb://localhost:27017',
+  PORT,
+  MONGO_URL,
+  FRONT_LINK,
 } = process.env;
 
 const app = express();
@@ -20,7 +22,7 @@ app.use(express.json());
 
 app.use(cors(
   {
-    origin: 'http://alekseev.nomoreparties.sb.nomoreparties.sbs',
+    origin: FRONT_LINK,
     credentials: true,
   },
 ));
