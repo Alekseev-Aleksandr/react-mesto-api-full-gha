@@ -1,28 +1,10 @@
-# Проект: Место
-#### статус проекта: :hammer_and_wrench: в работе  
-## О проекте:
-Небольшая страничка для усвоения навыков JS, верстки, React. 
-Основной задачей проекта является реализация функционала странички с использованием React:
+[![Tests](../../actions/workflows/tests-13-sprint.yml/badge.svg)](../../actions/workflows/tests-13-sprint.yml) [![Tests](../../actions/workflows/tests-14-sprint.yml/badge.svg)](../../actions/workflows/tests-14-sprint.yml)
+# Проект Mesto фронтенд + бэкенд
 
-* Возможность редактировать иформацию о себе 
-* Добавлять/удалять новые посты
-* Ставить Лайки
-* Реализовать регистрацию, авторизацию пользователя 
+IP  158.160.113.242
+Frontend  https://alekseev.nomoreparties.sb.nomoreparties.sbs
+Backend  https://api.alekseev.nomoreparties.sbs
 
-## Еще больше технологий
+Остальные директории вспомогательные, создаются при необходимости разработчиком
 
-* HTML
-* CSS
-* Grid
-* Flex
-* JS
-* React
-
-### Как развернуть?
-- клонируем репозиторий
-- в терминале вводим команды 
- ```
-npm install
-npm start
- ```
-[GitHub Pages]( https://alekseev-aleksandr.github.io/react-mesto-auth/)
+[Репозиторий](https://github.com/Alekseev-Aleksandr/react-mesto-api-full-gha)
