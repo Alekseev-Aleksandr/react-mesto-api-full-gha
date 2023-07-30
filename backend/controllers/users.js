@@ -1,8 +1,13 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const NotFoundError = require('../errors/NotFoundError');
-
 const Conflict = require('../errors/Conflict');
+require('dotenv').config();
+
+const {
+  NODE_ENV,
+  JWT_SECRET,
+} = process.env;
 
 const getAllUser = ((req, res) => {
   User.find({})
@@ -69,12 +74,11 @@ const updateAvatar = ((req, res, next) => {
 
 const login = (req, res, next) => {
   const { email, password } = req.body;
-  console.log(email, password);
   User.findUserByCredentials(email, password, next)
     .then((user) => {
       const newToken = jwt.sign(
         { _id: user.id },
-        'unique-secret-key',
+        NODE_ENV === 'production' ? JWT_SECRET : 'unique-secret-key',
         { expiresIn: '7d' },
       );
 

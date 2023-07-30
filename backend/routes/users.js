@@ -11,20 +11,7 @@ const {
   logOut,
 } = require('../controllers/users');
 
-router.get('/users', getAllUser);
-
 router.get('/users/me', getMyInfo);
-
-router.get(
-  '/users/:userId',
-  celebrate({
-    params: Joi.object()
-      .keys({
-        userId: Joi.string().hex().length(24).required(),
-      }),
-  }),
-  getUserById,
-);
 
 router.patch(
   '/users/me',
@@ -47,6 +34,18 @@ router.patch(
   updateAvatar,
 );
 
+router.get('/users', getAllUser);
+router.get(
+  '/users/:userId',
+  celebrate({
+    params: Joi.object()
+      .keys({
+        userId: Joi.string().hex().length(24).required(),
+      }),
+  }),
+
+  getUserById,
+);
 router.get('/logout', logOut);
 
 module.exports = router;

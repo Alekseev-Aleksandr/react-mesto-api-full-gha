@@ -64,7 +64,7 @@ function App() {
     }
 
     function handleCardLike(card) {
-        const isLike = card.likes.some(i => i._id === currentUser._id)
+        const isLike = card.likes.some(i => i === currentUser._id)
 
         if (!isLike) {
             api.addLikeCard(card._id)
