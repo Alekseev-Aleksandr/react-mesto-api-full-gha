@@ -1,12 +1,10 @@
-const {
-    REACT_APP_URL ,
-} = process.env //localhost:4000
-console.log(process.env.REACT_APP_URL);
-console.log(REACT_APP_URL);
+// const {
+//     REACT_APP_URL ,
+// } = process.env //localhost:4000
 
 export const requestAuth = ({ email, password }, endPoint) => {
 
-    return fetch(`${'https://api.alekseev.nomoreparties.sbs' + '/' + endPoint}`, {
+    return fetch(`${'https://api.alekseev.nomoreparties.sbs/' + endPoint}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

@@ -5,8 +5,8 @@ const Conflict = require('../errors/Conflict');
 require('dotenv').config();
 
 const {
-  NODE_ENV,
-  JWT_SECRET,
+  NODE_ENV = 'noProd',
+  JWT_SECRET = 'unique-secret-key',
 } = process.env;
 
 const getAllUser = ((req, res) => {

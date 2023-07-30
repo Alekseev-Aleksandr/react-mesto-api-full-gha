@@ -12,8 +12,8 @@ module.exports = (req, res, next) => {
 
   let payload;
   const {
-    NODE_ENV,
-    JWT_SECRET,
+    NODE_ENV = 'noProd',
+    JWT_SECRET = 'unique-secret-key',
   } = process.env;
 
   try {

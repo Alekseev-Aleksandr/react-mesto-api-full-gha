@@ -9,8 +9,8 @@ const { errorLogger, requestLogger } = require('./middlewares/logger');
 require('dotenv').config();
 
 const {
-  PORT,
-  MONGO_URL,
+  PORT = 4000,
+  MONGO_URL = 'mongodb://localhost:27017',
   // FRONT_LINK,
 } = process.env;
 
