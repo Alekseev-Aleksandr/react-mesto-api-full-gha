@@ -125,11 +125,11 @@ class Api {
 }
 
 const {
-    REACT_APP_URL,
+   //REACT_APP_URL,
 } = process.env;
 
 export const api = new Api({
-    baseUrl: REACT_APP_URL,
+    baseUrl: 'https://api.alekseev.nomoreparties.sbs',
     credentials: 'include',
     headers: {
         'Content-Type': 'application/json',

@@ -6,7 +6,7 @@ console.log(REACT_APP_URL);
 
 export const requestAuth = ({ email, password }, endPoint) => {
 
-    return fetch(`${REACT_APP_URL + '/' + endPoint}`, {
+    return fetch(`${'https://api.alekseev.nomoreparties.sbs' + '/' + endPoint}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -22,7 +22,7 @@ export const requestAuth = ({ email, password }, endPoint) => {
 }
 
 export function requestCheckJWT() {
-    return fetch(`${REACT_APP_URL}/users/me`, {
+    return fetch(`https://api.alekseev.nomoreparties.sbs/users/me`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
