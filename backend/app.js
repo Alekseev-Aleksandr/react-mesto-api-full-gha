@@ -11,8 +11,21 @@ require('dotenv').config();
 const {
   PORT,
   MONGO_URL,
-  FRONT_LINK,
+  // FRONT_LINK,
 } = process.env;
+
+const options = {
+  origin: [
+    'http://api.alekseev.nomoreparties.sbs',
+    'http://alekseev.nomoreparties.sb.nomoreparties.sbs',
+    'https://api.alekseev.nomoreparties.sbs',
+    'https://alekseev.nomoreparties.sb.nomoreparties.sbs',
+  ],
+  allowedHeaders: ['Content-Type', 'origin'],
+  methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
+  preflightContinue: false,
+  credentials: true,
+};
 
 const app = express();
 
@@ -20,12 +33,7 @@ mongoose.connect(`${MONGO_URL}/mestodb`);
 
 app.use(express.json());
 
-app.use(cors(
-  {
-    origin: FRONT_LINK,
-    credentials: true,
-  },
-));
+app.use(cors(options));
 
 app.use(cookieParser());
 
