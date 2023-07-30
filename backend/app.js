@@ -2,10 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 const router = require('./routes');
 const NotFoundError = require('./errors/NotFoundError');
 const { errorLogger, requestLogger } = require('./middlewares/logger');
-const cookieParser = require('cookie-parser');
 require('dotenv').config();
 
 const {
