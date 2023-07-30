@@ -7,4 +7,4 @@ Backend  https://api.alekseev.nomoreparties.sbs
 
 Остальные директории вспомогательные, создаются при необходимости разработчиком
 
-[Ссылка](https://github.com/Alekseev-Aleksandr/react-mesto-api-full-gha)
+[Репозиторий](https://github.com/Alekseev-Aleksandr/react-mesto-api-full-gha)
