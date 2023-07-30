@@ -1,16 +1,10 @@
-[![Статус тестов](../../actions/workflows/tests.yml/badge.svg)](../../actions/workflows/tests.yml)
+[![Tests](../../actions/workflows/tests-13-sprint.yml/badge.svg)](../../actions/workflows/tests-13-sprint.yml) [![Tests](../../actions/workflows/tests-14-sprint.yml/badge.svg)](../../actions/workflows/tests-14-sprint.yml)
+# Проект Mesto фронтенд + бэкенд
 
-# react-mesto-api-full
-Репозиторий для приложения проекта `Mesto`, включающий фронтенд и бэкенд части приложения со следующими возможностями: авторизации и регистрации пользователей, операции с карточками и пользователями. Бэкенд расположите в директории `backend/`, а фронтенд - в `frontend/`. 
-  
-Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
+IP  158.160.113.242
+Frontend  https://alekseev.nomoreparties.sb.nomoreparties.sbs
+Backend  https://api.alekseev.nomoreparties.sbs
 
-Адрес репозитория: https://github.com/...
+Остальные директории вспомогательные, создаются при необходимости разработчиком
 
-## Ссылки на проект
-
-IP-адрес x.x.x.x
-
-Frontend https://...
-
-Backend https://...
+[Репозиторий](https://github.com/Alekseev-Aleksandr/react-mesto-api-full-gha)
