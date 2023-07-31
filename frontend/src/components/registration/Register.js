@@ -44,7 +44,7 @@ function Register({ onRegistration }) {
                     <input className="form__input form__input_type_auth"
                         id="form__input-password"
                         name="password"
-                        type="text"
+                        type="password"
                         required
                         minLength="2"
                         maxLength="200"
